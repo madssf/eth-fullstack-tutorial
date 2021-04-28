@@ -1,5 +1,8 @@
 require("@nomiclabs/hardhat-waffle");
 
+var CONFIG = require('./config.json');
+
+
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async () => {
@@ -24,6 +27,10 @@ module.exports = {
   networks: {
     hardhat: {
       chainId: 1337
+    },
+    ropsten: {
+      url: "https://ropsten.infura.io/v3/1b90907253e647f4b60563abe20eef3f",
+      accounts: [`0x${CONFIG.key}`]
     }
   }
 };
